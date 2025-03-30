@@ -1,0 +1,394 @@
+# data/dorks.txt
+# Dorks for Bug Bounty Reconnaissance
+# Placeholder: example.com (will be replaced by user input)
+
+# === Subdomain Discovery ===
+site:*.example.com -inurl:(signup | login)
+site:*.example.com inurl:www
+site:*.example.com -inurl:www
+site:*.example.com inurl:dev
+site:*.example.com inurl:test
+site:*.example.com inurl:staging
+site:*.example.com inurl:api
+site:*.example.com inurl:admin
+site:*.example.com inurl:beta
+site:*.example.com inurl:prod
+site:*.example.com inurl:internal
+site:*.example.com inurl:external
+site:*.example.com inurl:secure
+site:*.example.com inurl:security
+site:*.example.com inurl:private
+site:*.example.com inurl:public
+site:*.example.com inurl:legacy
+site:*.example.com inurl:old
+site:*.example.com inurl:archive
+site:*.example.com inurl:temp
+
+# === Sensitive Files and Directories ===
+site:example.com filetype:txt intext:"password"
+site:example.com filetype:log
+site:example.com filetype:sql
+site:example.com filetype:sql intext:"INSERT INTO"
+site:example.com filetype:bak
+site:example.com filetype:backup
+site:example.com filetype:conf
+site:example.com filetype:config
+site:example.com filetype:ini
+site:example.com filetype:env
+site:example.com filetype:env intext:"DB_PASSWORD"
+site:example.com filetype:env intext:"API_KEY"
+site:example.com filetype:json intext:"api_key"
+site:example.com filetype:json intext:"password"
+site:example.com filetype:xml intext:"password"
+site:example.com filetype:xml intext:"api_key"
+site:example.com filetype:php.bak
+site:example.com filetype:php~ 
+site:example.com filetype:git
+site:example.com inurl:.git
+site:example.com inurl:.gitignore
+site:example.com inurl:.htaccess
+site:example.com inurl:.htpasswd
+site:example.com inurl:backup
+site:example.com inurl:backups
+site:example.com inurl:dump
+site:example.com inurl:sql_dump
+site:example.com inurl:config
+site:example.com inurl:configuration
+site:example.com inurl:settings
+site:example.com inurl:setup
+site:example.com inurl:install
+site:example.com inurl:installation
+site:example.com inurl:logs
+site:example.com inurl:log
+site:example.com inurl:cache
+site:example.com inurl:cached
+site:example.com inurl:temp
+site:example.com inurl:tmp
+site:example.com inurl:upload
+site:example.com inurl:uploads
+site:example.com inurl:export
+site:example.com inurl:import
+site:example.com inurl:archive
+site:example.com inurl:old
+site:example.com inurl:legacy
+site:example.com inurl:private
+site:example.com inurl:internal
+site:example.com inurl:secure
+site:example.com inurl:security
+site:example.com inurl:db_backup
+site:example.com inurl:backup.sql
+
+# === Login and Admin Pages ===
+site:example.com inurl:login
+site:example.com inurl:signin
+site:example.com inurl:sign-in
+site:example.com inurl:auth
+site:example.com inurl:authenticate
+site:example.com inurl:admin
+site:example.com inurl:administrator
+site:example.com inurl:dashboard
+site:example.com inurl:panel
+site:example.com inurl:cpanel
+site:example.com inurl:controlpanel
+site:example.com inurl:manage
+site:example.com inurl:manager
+site:example.com inurl:profile
+site:example.com inurl:account
+site:example.com inurl:userprofile
+site:example.com inurl:reset
+site:example.com inurl:password-reset
+site:example.com inurl:forgot-password
+site:example.com inurl:register
+site:example.com inurl:signup
+site:example.com inurl:sign-up
+site:example.com inurl:verify
+site:example.com inurl:email
+site:example.com inurl:mail
+site:example.com inurl:inbox
+site:example.com inurl:outbox
+site:example.com inurl:admin-login
+site:example.com inurl:adminpanel
+site:example.com inurl:admin-panel
+site:example.com inurl:admin-dashboard
+site:example.com inurl:admincp
+site:example.com inurl:admin-cp
+site:example.com inurl:mod
+site:example.com inurl:moderator
+site:example.com inurl:sysadmin
+site:example.com inurl:superadmin
+site:example.com inurl:superuser
+
+# === API and Sensitive Endpoints ===
+site:example.com inurl:api
+site:example.com inurl:api/v1
+site:example.com inurl:api/v2
+site:example.com inurl:rest
+site:example.com inurl:graphql
+site:example.com inurl:endpoint
+site:example.com inurl:json
+site:example.com inurl:xmlrpc
+site:example.com inurl:wp-json
+site:example.com inurl:swagger
+site:example.com inurl:openapi
+site:example.com inurl:restapi
+site:example.com inurl:webservice
+site:example.com inurl:service
+site:example.com inurl:api-key
+site:example.com inurl:token
+site:example.com inurl:tokens
+site:example.com inurl:authz
+site:example.com inurl:authn
+site:example.com inurl:oauth
+site:example.com inurl:sso
+site:example.com inurl:saml
+site:example.com inurl:api-token
+site:example.com inurl:api_key
+site:example.com inurl:rest/v1
+site:example.com inurl:rest/v2
+site:example.com inurl:graphql/v1
+site:example.com inurl:graphql/v2
+site:example.com inurl:endpoint/v1
+site:example.com inurl:endpoint/v2
+site:example.com inurl:jsonrpc
+site:example.com inurl:soap
+site:example.com inurl:wsdl
+site:example.com inurl:webapi
+site:example.com inurl:apiv3
+site:example.com inurl:apiv4
+
+# === Exposed Credentials and Keys ===
+site:example.com intext:"api_key"
+site:example.com intext:"apikey"
+site:example.com intext:"password"
+site:example.com intext:"secret_key"
+site:example.com intext:"access_token"
+site:example.com intext:"auth_token"
+site:example.com intext:"db_password"
+site:example.com intext:"db_user"
+site:example.com intext:"mysql_password"
+site:example.com intext:"ssh_key"
+site:example.com intext:"private_key"
+site:example.com intext:"public_key"
+site:example.com intext:"jwt_token"
+site:example.com intext:"bearer_token"
+site:example.com intext:"session_id"
+site:example.com intext:"client_id"
+site:example.com intext:"client_secret"
+site:example.com intext:"api_secret"
+site:example.com intext:"app_key"
+site:example.com intext:"app_secret"
+site:example.com intext:"db_pass"
+site:example.com intext:"db_username"
+site:example.com intext:"mysql_user"
+site:example.com intext:"mysql_pass"
+site:example.com intext:"ftp_password"
+site:example.com intext:"ftp_user"
+site:example.com intext:"smtp_password"
+site:example.com intext:"smtp_user"
+site:example.com intext:"aws_key"
+site:example.com intext:"aws_secret"
+site:example.com intext:"gcp_key"
+site:example.com intext:"azure_key"
+site:example.com intext:"oauth_token"
+site:example.com intext:"refresh_token"
+site:example.com intext:"id_token"
+site:example.com intext:"api_token"
+site:example.com intext:"secret"
+
+# === Error Messages and Debug Info ===
+site:example.com intext:"error" filetype:log
+site:example.com intext:"exception" filetype:log
+site:example.com intext:"stack trace"
+site:example.com intext:"debug mode"
+site:example.com intext:"sql error"
+site:example.com intext:"mysql error"
+site:example.com intext:"php error"
+site:example.com intext:"warning" filetype:php
+site:example.com intext:"fatal error"
+site:example.com intext:"uncaught exception"
+site:example.com intext:"traceback"
+site:example.com intext:"debug enabled"
+site:example.com intext:"error 500"
+site:example.com intext:"error 404"
+site:example.com intext:"error 403"
+site:example.com intext:"error 401"
+site:example.com intext:"error 400"
+site:example.com intext:"server error"
+site:example.com intext:"internal error"
+site:example.com intext:"database error"
+site:example.com intext:"query error"
+site:example.com intext:"syntax error"
+site:example.com intext:"exception thrown"
+site:example.com intext:"debug log"
+site:example.com intext:"error log"
+site:example.com intext:"exception log"
+site:example.com intext:"warning log"
+site:example.com intext:"php warning"
+site:example.com intext:"php notice"
+site:example.com intext:"mysql warning"
+site:example.com intext:"sql warning"
+site:example.com intext:"error message"
+site:example.com intext:"exception message"
+
+# === File Extensions for Sensitive Data ===
+site:example.com filetype:pdf intext:"confidential"
+site:example.com filetype:doc intext:"password"
+site:example.com filetype:docx intext:"password"
+site:example.com filetype:xls intext:"password"
+site:example.com filetype:xlsx intext:"password"
+site:example.com filetype:csv intext:"password"
+site:example.com filetype:txt intext:"api_key"
+site:example.com filetype:md intext:"password"
+site:example.com filetype:md intext:"api_key"
+site:example.com filetype:yaml intext:"password"
+site:example.com filetype:yaml intext:"api_key"
+site:example.com filetype:yml intext:"password"
+site:example.com filetype:yml intext:"api_key"
+site:example.com filetype:sh intext:"password"
+site:example.com filetype:sh intext:"api_key"
+site:example.com filetype:txt intext:"confidential"
+site:example.com filetype:log intext:"password"
+site:example.com filetype:log intext:"api_key"
+site:example.com filetype:sql intext:"password"
+site:example.com filetype:sql intext:"api_key"
+site:example.com filetype:bak intext:"password"
+site:example.com filetype:bak intext:"api_key"
+site:example.com filetype:backup intext:"password"
+site:example.com filetype:backup intext:"api_key"
+site:example.com filetype:conf intext:"password"
+site:example.com filetype:conf intext:"api_key"
+site:example.com filetype:config intext:"password"
+site:example.com filetype:config intext:"api_key"
+site:example.com filetype:ini intext:"password"
+site:example.com filetype:ini intext:"api_key"
+site:example.com filetype:env intext:"password"
+site:example.com filetype:env intext:"api_key"
+site:example.com filetype:json intext:"confidential"
+site:example.com filetype:xml intext:"confidential"
+site:example.com filetype:php.bak intext:"password"
+site:example.com filetype:php.bak intext:"api_key"
+site:example.com filetype:php~ intext:"password"
+site:example.com filetype:php~ intext:"api_key"
+site:example.com filetype:git intext:"password"
+site:example.com filetype:git intext:"api_key"
+
+# === Parameter-Based Vulnerabilities ===
+site:example.com inurl:id=
+site:example.com inurl:page=
+site:example.com inurl:user=
+site:example.com inurl:uid=
+site:example.com inurl:pid=
+site:example.com inurl:cat=
+site:example.com inurl:category=
+site:example.com inurl:product=
+site:example.com inurl:search=
+site:example.com inurl:item=
+site:example.com inurl:order=
+site:example.com inurl:cart=
+site:example.com inurl:checkout=
+site:example.com inurl:payment=
+site:example.com inurl:transaction=
+site:example.com inurl:profile_id=
+site:example.com inurl:account_id=
+site:example.com inurl:user_id=
+site:example.com inurl:group_id=
+site:example.com inurl:session_id=
+site:example.com inurl:token_id=
+site:example.com inurl:order_id=
+site:example.com inurl:product_id=
+site:example.com inurl:category_id=
+site:example.com inurl:cart_id=
+site:example.com inurl:payment_id=
+site:example.com inurl:transaction_id=
+site:example.com inurl:query=
+site:example.com inurl:filter=
+site:example.com inurl:sort=
+
+# === CMS and Framework-Specific ===
+site:example.com inurl:wp-admin
+site:example.com inurl:wp-login
+site:example.com inurl:wp-content
+site:example.com inurl:wp-includes
+site:example.com inurl:admin-ajax.php
+site:example.com inurl:drupal
+site:example.com inurl:joomla
+site:example.com inurl:magento
+site:example.com inurl:opencart
+site:example.com inurl:prestashop
+site:example.com inurl:laravel
+site:example.com inurl:vendor
+site:example.com inurl:composer.json
+site:example.com inurl:package.json
+site:example.com inurl:node_modules
+site:example.com inurl:wp-config.php
+site:example.com inurl:wp-config.php.bak
+site:example.com inurl:configuration.php
+site:example.com inurl:settings.php
+site:example.com inurl:config.php
+site:example.com inurl:local.php
+site:example.com inurl:env.php
+site:example.com inurl:app.php
+site:example.com inurl:database.php
+site:example.com inurl:config.inc.php
+site:example.com inurl:wp-json/wp/v2
+site:example.com inurl:wp-json/wp/v3
+site:example.com inurl:drupal/sites
+site:example.com inurl:joomla/administrator
+site:example.com inurl:magento/admin
+site:example.com inurl:opencart/admin
+site:example.com inurl:prestashop/admin
+
+# === Miscellaneous ===
+site:example.com inurl:phpinfo
+site:example.com inurl:info.php
+site:example.com inurl:test.php
+site:example.com inurl:debug
+site:example.com inurl:staging
+site:example.com inurl:dev
+site:example.com inurl:temp
+site:example.com inurl:tmp
+site:example.com inurl:upload
+site:example.com inurl:uploads
+site:example.com inurl:cache
+site:example.com inurl:cached
+site:example.com inurl:session
+site:example.com inurl:sessions
+site:example.com inurl:logs
+site:example.com inurl:log
+site:example.com inurl:archive
+site:example.com inurl:old
+site:example.com inurl:legacy
+site:example.com inurl:backup.sql
+site:example.com inurl:db_backup
+site:example.com inurl:export
+site:example.com inurl:import
+site:example.com inurl:private
+site:example.com inurl:internal
+site:example.com inurl:secure
+site:example.com inurl:security
+site:example.com inurl:authz
+site:example.com inurl:authn
+site:example.com inurl:oauth
+site:example.com inurl:sso
+site:example.com inurl:saml
+site:example.com inurl:debug.log
+site:example.com inurl:error.log
+site:example.com inurl:access.log
+site:example.com inurl:server.log
+site:example.com inurl:application.log
+site:example.com inurl:debug.php
+site:example.com inurl:test.html
+site:example.com inurl:demo
+site:example.com inurl:sandbox
+site:example.com inurl:playground
+site:example.com inurl:experimental
+site:example.com inurl:testing
+site:example.com inurl:development
+site:example.com inurl:prod-backup
+site:example.com inurl:staging-backup
+site:example.com inurl:dev-backup
+site:example.com inurl:old-backup
+site:example.com inurl:legacy-backup
+site:example.com inurl:archive-backup
+site:example.com inurl:temp-backup
+site:example.com inurl:tmp-backup
