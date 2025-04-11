@@ -392,3 +392,909 @@ site:example.com inurl:legacy-backup
 site:example.com inurl:archive-backup
 site:example.com inurl:temp-backup
 site:example.com inurl:tmp-backup
+site:example.com inurl:login
+site:example.com inurl:admin
+site:example.com inurl:signup
+site:example.com inurl:dashboard
+site:example.com inurl:panel
+site:example.com inurl:config
+site:example.com inurl:setup
+site:example.com inurl:backup
+site:example.com inurl:db
+site:example.com inurl:database
+site:example.com inurl:test
+site:example.com inurl:testing
+site:example.com inurl:dev
+site:example.com inurl:development
+site:example.com inurl:api
+site:example.com inurl:rest
+site:example.com inurl:auth
+site:example.com inurl:authentication
+site:example.com inurl:user
+site:example.com inurl:profile
+site:example.com inurl:cpanel
+site:example.com inurl:controlpanel
+site:example.com inurl:portal
+site:example.com inurl:gateway
+site:example.com inurl:install
+site:example.com inurl:installer
+site:example.com inurl:temp
+site:example.com inurl:temporary
+site:example.com inurl:staging
+site:example.com inurl:stage
+site:example.com filetype:php
+site:example.com filetype:sql
+site:example.com filetype:txt
+site:example.com filetype:pdf
+site:example.com filetype:doc
+site:example.com filetype:docx
+site:example.com filetype:xls
+site:example.com filetype:xlsx
+site:example.com filetype:csv
+site:example.com filetype:log
+site:example.com filetype:bak
+site:example.com filetype:conf
+site:example.com filetype:ini
+site:example.com filetype:json
+site:example.com filetype:xml
+site:example.com filetype:asp
+site:example.com filetype:aspx
+site:example.com ext:php
+site:example.com ext:sql
+site:example.com ext:txt
+site:example.com ext:pdf
+site:example.com ext:doc
+site:example.com ext:docx
+site:example.com ext:xls
+site:example.com ext:xlsx
+site:example.com ext:csv
+site:example.com ext:log
+site:example.com ext:bak
+site:example.com ext:conf
+site:example.com ext:ini
+site:example.com ext:json
+site:example.com ext:xml
+site:example.com ext:asp
+site:example.com ext:aspx
+site:example.com intext:"password"
+site:example.com intext:"username"
+site:example.com intext:"confidential"
+site:example.com intext:"secret"
+site:example.com intext:"key"
+site:example.com intext:"api key"
+site:example.com intext:"private"
+site:example.com intext:"internal"
+site:example.com intext:"error"
+site:example.com intext:"leak"
+site:example.com intext:"dump"
+site:example.com intext:"version"
+site:example.com "index of /"
+site:example.com "index of /backup"
+site:example.com "index of /db"
+site:example.com "index of /admin"
+site:example.com "index of /config"
+site:example.com "parent directory"
+site:example.com inurl:wp-admin
+site:example.com inurl:wordpress
+site:example.com inurl:phpmyadmin
+site:example.com inurl:pma
+site:example.com inurl:joomla
+site:example.com inurl:drupal
+site:example.com inurl:magento
+site:example.com inurl:admin/login.php
+site:example.com inurl:(login | signin)
+site:example.com inurl:(signup | register)
+site:example.com -inurl:login
+site:example.com -inurl:signup
+site:example.com -intext:"public"
+site:example.com "powered by"
+site:example.com inurl:"?id="
+site:example.com inurl:"?page="
+site:example.com inurl:"?file="
+site:example.com inurl:"?user="
+site:example.com inurl:"?key="
+site:example.com filetype:php intext:"error"
+site:example.com filetype:sql intext:"dump"
+site:example.com filetype:txt intext:"password"
+site:example.com filetype:pdf intext:"confidential"
+site:example.com filetype:doc intext:"internal"
+site:example.com filetype:csv intext:"email"
+site:example.com filetype:log intext:"error"
+site:example.com filetype:bak intext:"backup"
+site:example.com filetype:conf intext:"key"
+site:example.com filetype:ini intext:"settings"
+site:example.com filetype:json intext:"api"
+site:example.com filetype:xml intext:"data"
+site:example.com ext:php intext:"error"
+site:example.com ext:sql intext:"dump"
+site:example.com ext:txt intext:"password"
+site:example.com ext:pdf intext:"confidential"
+site:example.com ext:doc intext:"internal"
+site:example.com ext:csv intext:"email"
+site:example.com ext:log intext:"error"
+site:example.com ext:bak intext:"backup"
+site:example.com ext:conf intext:"key"
+site:example.com ext:ini intext:"settings"
+site:example.com ext:json intext:"api"
+site:example.com ext:xml intext:"data"
+site:example.com inurl:login filetype:php
+site:example.com inurl:admin filetype:php
+site:example.com inurl:dashboard filetype:php
+site:example.com inurl:panel filetype:php
+site:example.com inurl:config filetype:php
+site:example.com inurl:backup filetype:php
+site:example.com inurl:db filetype:php
+site:example.com inurl:test filetype:php
+site:example.com inurl:dev filetype:php
+site:example.com inurl:api filetype:php
+site:example.com inurl:auth filetype:php
+site:example.com inurl:user filetype:php
+site:example.com inurl:profile filetype:php
+site:example.com inurl:cpanel filetype:php
+site:example.com inurl:portal filetype:php
+site:example.com inurl:install filetype:php
+site:example.com inurl:temp filetype:php
+site:example.com inurl:staging filetype:php
+site:example.com inurl:login filetype:asp
+site:example.com inurl:admin filetype:asp
+site:example.com inurl:dashboard filetype:asp
+site:example.com inurl:panel filetype:asp
+site:example.com inurl:config filetype:asp
+site:example.com inurl:backup filetype:asp
+site:example.com inurl:db filetype:asp
+site:example.com inurl:test filetype:asp
+site:example.com inurl:dev filetype:asp
+site:example.com inurl:api filetype:asp
+site:example.com inurl:auth filetype:asp
+site:example.com inurl:user filetype:asp
+site:example.com inurl:profile filetype:asp
+site:example.com inurl:cpanel filetype:asp
+site:example.com inurl:portal filetype:asp
+site:example.com inurl:install filetype:asp
+site:example.com inurl:temp filetype:asp
+site:example.com inurl:staging filetype:asp
+site:example.com inurl:login filetype:aspx
+site:example.com inurl:admin filetype:aspx
+site:example.com inurl:dashboard filetype:aspx
+site:example.com inurl:panel filetype:aspx
+site:example.com inurl:config filetype:aspx
+site:example.com inurl:backup filetype:aspx
+site:example.com inurl:db filetype:aspx
+site:example.com inurl:test filetype:aspx
+site:example.com inurl:dev filetype:aspx
+site:example.com inurl:api filetype:aspx
+site:example.com inurl:auth filetype:aspx
+site:example.com inurl:user filetype:aspx
+site:example.com inurl:profile filetype:aspx
+site:example.com inurl:cpanel filetype:aspx
+site:example.com inurl:portal filetype:aspx
+site:example.com inurl:install filetype:aspx
+site:example.com inurl:temp filetype:aspx
+site:example.com inurl:staging filetype:aspx
+site:example.com intext:"password" filetype:php
+site:example.com intext:"username" filetype:php
+site:example.com intext:"confidential" filetype:php
+site:example.com intext:"secret" filetype:php
+site:example.com intext:"key" filetype:php
+site:example.com intext:"api key" filetype:php
+site:example.com intext:"private" filetype:php
+site:example.com intext:"internal" filetype:php
+site:example.com intext:"error" filetype:php
+site:example.com intext:"leak" filetype:php
+site:example.com intext:"dump" filetype:php
+site:example.com intext:"version" filetype:php
+site:example.com intext:"password" filetype:asp
+site:example.com intext:"username" filetype:asp
+site:example.com intext:"confidential" filetype:asp
+site:example.com intext:"secret" filetype:asp
+site:example.com intext:"key" filetype:asp
+site:example.com intext:"api key" filetype:asp
+site:example.com intext:"private" filetype:asp
+site:example.com intext:"internal" filetype:asp
+site:example.com intext:"error" filetype:asp
+site:example.com intext:"leak" filetype:asp
+site:example.com intext:"dump" filetype:asp
+site:example.com intext:"version" filetype:asp
+site:example.com intext:"password" filetype:aspx
+site:example.com intext:"username" filetype:aspx
+site:example.com intext:"confidential" filetype-aspx
+site:example.com intext:"secret" filetype:aspx
+site:example.com intext:"key" filetype:aspx
+site:example.com intext:"api key" filetype:aspx
+site:example.com intext:"private" filetype:aspx
+site:example.com intext:"internal" filetype:aspx
+site:example.com intext:"error" filetype:aspx
+site:example.com intext:"leak" filetype:aspx
+site:example.com intext:"dump" filetype:aspx
+site:example.com intext:"version" filetype:aspx
+site:example.com inurl:login -intext:"public"
+site:example.com inurl:admin -intext:"public"
+site:example.com inurl:dashboard -intext:"public"
+site:example.com inurl:panel -intext:"public"
+site:example.com inurl:config -intext:"public"
+site:example.com inurl:backup -intext:"public"
+site:example.com inurl:db -intext:"public"
+site:example.com inurl:test -intext:"public"
+site:example.com inurl:dev -intext:"public"
+site:example.com inurl:api -intext:"public"
+site:example.com inurl:auth -intext:"public"
+site:example.com inurl:user -intext:"public"
+site:example.com inurl:profile -intext:"public"
+site:example.com inurl:cpanel -intext:"public"
+site:example.com inurl:portal -intext:"public"
+site:example.com inurl:install -intext:"public"
+site:example.com inurl:temp -intext:"public"
+site:example.com inurl:staging -intext:"public"
+site:example.com "index of /" filetype:php
+site:example.com "index of /" filetype:sql
+site:example.com "index of /" filetype:txt
+site:example.com "index of /" filetype:pdf
+site:example.com "index of /" filetype:doc
+site:example.com "index of /" filetype:docx
+site:example.com "index of /" filetype:xls
+site:example.com "index of /" filetype:xlsx
+site:example.com "index of /" filetype:csv
+site:example.com "index of /" filetype:log
+site:example.com "index of /" filetype:bak
+site:example.com "index of /" filetype:conf
+site:example.com "index of /" filetype:ini
+site:example.com "index of /" filetype:json
+site:example.com "index of /" filetype:xml
+site:example.com "index of /" filetype:asp
+site:example.com "index of /" filetype:aspx
+site:example.com inurl:login "powered by"
+site:example.com inurl:admin "powered by"
+site:example.com inurl:dashboard "powered by"
+site:example.com inurl:panel "powered by"
+site:example.com inurl:config "powered by"
+site:example.com inurl:backup "powered by"
+site:example.com inurl:db "powered by"
+site:example.com inurl:test "powered by"
+site:example.com inurl:dev "powered by"
+site:example.com inurl:api "powered by"
+site:example.com inurl:auth "powered by"
+site:example.com inurl:user "powered by"
+site:example.com inurl:profile "powered by"
+site:example.com inurl:cpanel "powered by"
+site:example.com inurl:portal "powered by"
+site:example.com inurl:install "powered by"
+site:example.com inurl:temp "powered by"
+site:example.com inurl:staging "powered by"
+site:example.com inurl:(login | admin) filetype:php
+site:example.com inurl:(dashboard | panel) filetype:php
+site:example.com inurl:(config | setup) filetype:php
+site:example.com inurl:(backup | db) filetype:php
+site:example.com inurl:(test | dev) filetype:php
+site:example.com inurl:(api | rest) filetype:php
+site:example.com inurl:(auth | user) filetype:php
+site:example.com inurl:(cpanel | portal) filetype:php
+site:example.com inurl:(install | temp) filetype:php
+site:example.com inurl:(staging | stage) filetype:php
+site:example.com inurl:(login | admin) filetype:asp
+site:example.com inurl:(dashboard | panel) filetype:asp
+site:example.com inurl:(config | setup) filetype:asp
+site:example.com inurl:(backup | db) filetype:asp
+site:example.com inurl:(test | dev) filetype:asp
+site:example.com inurl:(api | rest) filetype:asp
+site:example.com inurl:(auth | user) filetype:asp
+site:example.com inurl:(cpanel | portal) filetype:asp
+site:example.com inurl:(install | temp) filetype:asp
+site:example.com inurl:(staging | stage) filetype:asp
+site:example.com inurl:(login | admin) filetype:aspx
+site:example.com inurl:(dashboard | panel) filetype:aspx
+site:example.com inurl:(config | setup) filetype:aspx
+site:example.com inurl:(backup | db) filetype:aspx
+site:example.com inurl:(test | dev) filetype:aspx
+site:example.com inurl:(api | rest) filetype:aspx
+site:example.com inurl:(auth | user) filetype:aspx
+site:example.com inurl:(cpanel | portal) filetype:aspx
+site:example.com inurl:(install | temp) filetype:aspx
+site:example.com inurl:(staging | stage) filetype:aspx
+site:example.com intext:"password" -inurl:login
+site:example.com intext:"username" -inurl:login
+site:example.com intext:"confidential" -inurl:login
+site:example.com intext:"secret" -inurl:login
+site:example.com intext:"key" -inurl:login
+site:example.com intext:"api key" -inurl:login
+site:example.com intext:"private" -inurl:login
+site:example.com intext:"internal" -inurl:login
+site:example.com intext:"error" -inurl:login
+site:example.com intext:"leak" -inurl:login
+site:example.com intext:"dump" -inurl:login
+site:example.com intext:"version" -inurl:login
+site:example.com inurl:login ext:php
+site:example.com inurl:admin ext:php
+site:example.com inurl:dashboard ext:php
+site:example.com inurl:panel ext:php
+site:example.com inurl:config ext:php
+site:example.com inurl:backup ext:php
+site:example.com inurl:db ext:php
+site:example.com inurl:test ext:php
+site:example.com inurl:dev ext:php
+site:example.com inurl:api ext:php
+site:example.com inurl:auth ext:php
+site:example.com inurl:user ext:php
+site:example.com inurl:profile ext:php
+site:example.com inurl:cpanel ext:php
+site:example.com inurl:portal ext:php
+site:example.com inurl:install ext:php
+site:example.com inurl:temp ext:php
+site:example.com inurl:staging ext:php
+site:example.com inurl:login ext:asp
+site:example.com inurl:admin ext:asp
+site:example.com inurl:dashboard ext:asp
+site:example.com inurl:panel ext:asp
+site:example.com inurl:config ext:asp
+site:example.com inurl:backup ext:asp
+site:example.com inurl:db ext:asp
+site:example.com inurl:test ext:asp
+site:example.com inurl:dev ext:asp
+site:example.com inurl:api ext:asp
+site:example.com inurl:auth ext:asp
+site:example.com inurl:user ext:asp
+site:example.com inurl:profile ext:asp
+site:example.com inurl:cpanel ext:asp
+site:example.com inurl:portal ext:asp
+site:example.com inurl:install ext:asp
+site:example.com inurl:temp ext:asp
+site:example.com inurl:staging ext:asp
+site:example.com inurl:login ext:aspx
+site:example.com inurl:admin ext:aspx
+site:example.com inurl:dashboard ext:aspx
+site:example.com inurl:panel ext:aspx
+site:example.com inurl:config ext:aspx
+site:example.com inurl:backup ext:aspx
+site:example.com inurl:db ext:aspx
+site:example.com inurl:test ext:aspx
+site:example.com inurl:dev ext:aspx
+site:example.com inurl:api ext:aspx
+site:example.com inurl:auth ext:aspx
+site:example.com inurl:user ext:aspx
+site:example.com inurl:profile ext:aspx
+site:example.com inurl:cpanel ext:aspx
+site:example.com inurl:portal ext:aspx
+site:example.com inurl:install ext:aspx
+site:example.com inurl:temp ext:aspx
+site:example.com inurl:staging ext:aspx
+site:example.com inurl:login intext:"error"
+site:example.com inurl:admin intext:"error"
+site:example.com inurl:dashboard intext:"error"
+site:example.com inurl:panel intext:"error"
+site:example.com inurl:config intext:"error"
+site:example.com inurl:backup intext:"error"
+site:example.com inurl:db intext:"error"
+site:example.com inurl:test intext:"error"
+site:example.com inurl:dev intext:"error"
+site:example.com inurl:api intext:"error"
+site:example.com inurl:auth intext:"error"
+site:example.com inurl:user intext:"error"
+site:example.com inurl:profile intext:"error"
+site:example.com inurl:cpanel intext:"error"
+site:example.com inurl:portal intext:"error"
+site:example.com inurl:install intext:"error"
+site:example.com inurl:temp intext:"error"
+site:example.com inurl:staging intext:"error"
+site:example.com inurl:login intext:"password"
+site:example.com inurl:admin intext:"password"
+site:example.com inurl:dashboard intext:"password"
+site:example.com inurl:panel intext:"password"
+site:example.com inurl:config intext:"password"
+site:example.com inurl:backup intext:"password"
+site:example.com inurl:db intext:"password"
+site:example.com inurl:test intext:"password"
+site:example.com inurl:dev intext:"password"
+site:example.com inurl:api intext:"password"
+site:example.com inurl:auth intext:"password"
+site:example.com inurl:user intext:"password"
+site:example.com inurl:profile intext:"password"
+site:example.com inurl:cpanel intext:"password"
+site:example.com inurl:portal intext:"password"
+site:example.com inurl:install intext:"password"
+site:example.com inurl:temp intext:"password"
+site:example.com inurl:staging intext:"password"
+site:example.com inurl:login intext:"username"
+site:example.com inurl:admin intext:"username"
+site:example.com inurl:dashboard intext:"username"
+site:example.com inurl:panel intext:"username"
+site:example.com inurl:config intext:"username"
+site:example.com inurl:backup intext:"username"
+site:example.com inurl:db intext:"username"
+site:example.com inurl:test intext:"username"
+site:example.com inurl:dev intext:"username"
+site:example.com inurl:api intext:"username"
+site:example.com inurl:auth intext:"username"
+site:example.com inurl:user intext:"username"
+site:example.com inurl:profile intext:"username"
+site:example.com inurl:cpanel intext:"username"
+site:example.com inurl:portal intext:"username"
+site:example.com inurl:install intext:"username"
+site:example.com inurl:temp intext:"username"
+site:example.com inurl:staging intext:"username"
+site:example.com inurl:login intext:"confidential"
+site:example.com inurl:admin intext:"confidential"
+site:example.com inurl:dashboard intext:"confidential"
+site:example.com inurl:panel intext:"confidential"
+site:example.com inurl:config intext:"confidential"
+site:example.com inurl:backup intext:"confidential"
+site:example.com inurl:db intext:"confidential"
+site:example.com inurl:test intext:"confidential"
+site:example.com inurl:dev intext:"confidential"
+site:example.com inurl:api intext:"confidential"
+site:example.com inurl:auth intext:"confidential"
+site:example.com inurl:user intext:"confidential"
+site:example.com inurl:profile intext:"confidential"
+site:example.com inurl:cpanel intext:"confidential"
+site:example.com inurl:portal intext:"confidential"
+site:example.com inurl:install intext:"confidential"
+site:example.com inurl:temp intext:"confidential"
+site:example.com inurl:staging intext:"confidential"
+site:example.com inurl:login intext:"secret"
+site:example.com inurl:admin intext:"secret"
+site:example.com inurl:dashboard intext:"secret"
+site:example.com inurl:panel intext:"secret"
+site:example.com inurl:config intext:"secret"
+site:example.com inurl:backup intext:"secret"
+site:example.com inurl:db intext:"secret"
+site:example.com inurl:test intext:"secret"
+site:example.com inurl:dev intext:"secret"
+site:example.com inurl:api intext:"secret"
+site:example.com inurl:auth intext:"secret"
+site:example.com inurl:user intext:"secret"
+site:example.com inurl:profile intext:"secret"
+site:example.com inurl:cpanel intext:"secret"
+site:example.com inurl:portal intext:"secret"
+site:example.com inurl:install intext:"secret"
+site:example.com inurl:temp intext:"secret"
+site:example.com inurl:staging intext:"secret"
+site:example.com inurl:login intext:"key"
+site:example.com inurl:admin intext:"key"
+site:example.com inurl:dashboard intext:"key"
+site:example.com inurl:panel intext:"key"
+site:example.com inurl:config intext:"key"
+site:example.com inurl:backup intext:"key"
+site:example.com inurl:db intext:"key"
+site:example.com inurl:test intext:"key"
+site:example.com inurl:dev intext:"key"
+site:example.com inurl:api intext:"key"
+site:example.com inurl:auth intext:"key"
+site:example.com inurl:user intext:"key"
+site:example.com inurl:profile intext:"key"
+site:example.com inurl:cpanel intext:"key"
+site:example.com inurl:portal intext:"key"
+site:example.com inurl:install intext:"key"
+site:example.com inurl:temp intext:"key"
+site:example.com inurl:staging intext:"key"
+site:example.com inurl:login intext:"api key"
+site:example.com inurl:admin intext:"api key"
+site:example.com inurl:dashboard intext:"api key"
+site:example.com inurl:panel intext:"api key"
+site:example.com inurl:config intext:"api key"
+site:example.com inurl:backup intext:"api key"
+site:example.com inurl:db intext:"api key"
+site:example.com inurl:test intext:"api key"
+site:example.com inurl:dev intext:"api key"
+site:example.com inurl:api intext:"api key"
+site:example.com inurl:auth intext:"api key"
+site:example.com inurl:user intext:"api key"
+site:example.com inurl:profile intext:"api key"
+site:example.com inurl:cpanel intext:"api key"
+site:example.com inurl:portal intext:"api key"
+site:example.com inurl:install intext:"api key"
+site:example.com inurl:temp intext:"api key"
+site:example.com inurl:staging intext:"api key"
+site:example.com inurl:login intext:"private"
+site:example.com inurl:admin intext:"private"
+site:example.com inurl:dashboard intext:"private"
+site:example.com inurl:panel intext:"private"
+site:example.com inurl:config intext:"private"
+site:example.com inurl:backup intext:"private"
+site:example.com inurl:db intext:"private"
+site:example.com inurl:test intext:"private"
+site:example.com inurl:dev intext:"private"
+site:example.com inurl:api intext:"private"
+site:example.com inurl:auth intext:"private"
+site:example.com inurl:user intext:"private"
+site:example.com inurl:profile intext:"private"
+site:example.com inurl:cpanel intext:"private"
+site:example.com inurl:portal intext:"private"
+site:example.com inurl:install intext:"private"
+site:example.com inurl:temp intext:"private"
+site:example.com inurl:staging intext:"private"
+site:example.com inurl:login intext:"internal"
+site:example.com inurl:admin intext:"internal"
+site:example.com inurl:dashboard intext:"internal"
+site:example.com inurl:panel intext:"internal"
+site:example.com inurl:config intext:"internal"
+site:example.com inurl:backup intext:"internal"
+site:example.com inurl:db intext:"internal"
+site:example.com inurl:test intext:"internal"
+site:example.com inurl:dev intext:"internal"
+site:example.com inurl:api intext:"internal"
+site:example.com inurl:auth intext:"internal"
+site:example.com inurl:user intext:"internal"
+site:example.com inurl:profile intext:"internal"
+site:example.com inurl:cpanel intext:"internal"
+site:example.com inurl:portal intext:"internal"
+site:example.com inurl:install intext:"internal"
+site:example.com inurl:temp intext:"internal"
+site:example.com inurl:staging intext:"internal"
+site:example.com inurl:login intext:"leak"
+site:example.com inurl:admin intext:"leak"
+site:example.com inurl:dashboard intext:"leak"
+site:example.com inurl:panel intext:"leak"
+site:example.com inurl:config intext:"leak"
+site:example.com inurl:backup intext:"leak"
+site:example.com inurl:db intext:"leak"
+site:example.com inurl:test intext:"leak"
+site:example.com inurl:dev intext:"leak"
+site:example.com inurl:api intext:"leak"
+site:example.com inurl:auth intext:"leak"
+site:example.com inurl:user intext:"leak"
+site:example.com inurl:profile intext:"leak"
+site:example.com inurl:cpanel intext:"leak"
+site:example.com inurl:portal intext:"leak"
+site:example.com inurl:install intext:"leak"
+site:example.com inurl:temp intext:"leak"
+site:example.com inurl:staging intext:"leak"
+site:example.com inurl:login intext:"dump"
+site:example.com inurl:admin intext:"dump"
+site:example.com inurl:dashboard intext:"dump"
+site:example.com inurl:panel intext:"dump"
+site:example.com inurl:config intext:"dump"
+site:example.com inurl:backup intext:"dump"
+site:example.com inurl:db intext:"dump"
+site:example.com inurl:test intext:"dump"
+site:example.com inurl:dev intext:"dump"
+site:example.com inurl:api intext:"dump"
+site:example.com inurl:auth intext:"dump"
+site:example.com inurl:user intext:"dump"
+site:example.com inurl:profile intext:"dump"
+site:example.com inurl:cpanel intext:"dump"
+site:example.com inurl:portal intext:"dump"
+site:example.com inurl:install intext:"dump"
+site:example.com inurl:temp intext:"dump"
+site:example.com inurl:staging intext:"dump"
+site:example.com inurl:login intext:"version"
+site:example.com inurl:admin intext:"version"
+site:example.com inurl:dashboard intext:"version"
+site:example.com inurl:panel intext:"version"
+site:example.com inurl:config intext:"version"
+site:example.com inurl:backup intext:"version"
+site:example.com inurl:db intext:"version"
+site:example.com inurl:test intext:"version"
+site:example.com inurl:dev intext:"version"
+site:example.com inurl:api intext:"version"
+site:example.com inurl:auth intext:"version"
+site:example.com inurl:user intext:"version"
+site:example.com inurl:profile intext:"version"
+site:example.com inurl:cpanel intext:"version"
+site:example.com inurl:portal intext:"version"
+site:example.com inurl:install intext:"version"
+site:example.com inurl:temp intext:"version"
+site:example.com inurl:staging intext:"version"
+site:example.com filetype:php -inurl:login
+site:example.com filetype:sql -inurl:login
+site:example.com filetype:txt -inurl:login
+site:example.com filetype:pdf -inurl:login
+site:example.com filetype:doc -inurl:login
+site:example.com filetype:docx -inurl:login
+site:example.com filetype:xls -inurl:login
+site:example.com filetype:xlsx -inurl:login
+site:example.com filetype:csv -inurl:login
+site:example.com filetype:log -inurl:login
+site:example.com filetype:bak -inurl:login
+site:example.com filetype:conf -inurl:login
+site:example.com filetype:ini -inurl:login
+site:example.com filetype:json -inurl:login
+site:example.com filetype:xml -inurl:login
+site:example.com filetype:asp -inurl:login
+site:example.com filetype:aspx -inurl:login
+site:example.com ext:php -inurl:login
+site:example.com ext:sql -inurl:login
+site:example.com ext:txt -inurl:login
+site:example.com ext:pdf -inurl:login
+site:example.com ext:doc -inurl:login
+site:example.com ext:docx -inurl:login
+site:example.com ext:xls -inurl:login
+site:example.com ext:xlsx -inurl:login
+site:example.com ext:csv -inurl:login
+site:example.com ext:log -inurl:login
+site:example.com ext:bak -inurl:login
+site:example.com ext:conf -inurl:login
+site:example.com ext:ini -inurl:login
+site:example.com ext:json -inurl:login
+site:example.com ext:xml -inurl:login
+site:example.com ext:asp -inurl:login
+site:example.com ext:aspx -inurl:login
+site:example.com inurl:"?id=" filetype:php
+site:example.com inurl:"?page=" filetype:php
+site:example.com inurl:"?file=" filetype:php
+site:example.com inurl:"?user=" filetype:php
+site:example.com inurl:"?key=" filetype:php
+site:example.com inurl:"?id=" filetype:asp
+site:example.com inurl:"?page=" filetype:asp
+site:example.com inurl:"?file=" filetype:asp
+site:example.com inurl:"?user=" filetype:asp
+site:example.com inurl:"?key=" filetype:asp
+site:example.com inurl:"?id=" filetype:aspx
+site:example.com inurl:"?page=" filetype:aspx
+site:example.com inurl:"?file=" filetype:aspx
+site:example.com inurl:"?user=" filetype:aspx
+site:example.com inurl:"?key=" filetype:aspx
+site:example.com inurl:login "index of /"
+site:example.com inurl:admin "index of /"
+site:example.com inurl:dashboard "index of /"
+site:example.com inurl:panel "index of /"
+site:example.com inurl:config "index of /"
+site:example.com inurl:backup "index of /"
+site:example.com inurl:db "index of /"
+site:example.com inurl:test "index of /"
+site:example.com inurl:dev "index of /"
+site:example.com inurl:api "index of /"
+site:example.com inurl:auth "index of /"
+site:example.com inurl:user "index of /"
+site:example.com inurl:profile "index of /"
+site:example.com inurl:cpanel "index of /"
+site:example.com inurl:portal "index of /"
+site:example.com inurl:install "index of /"
+site:example.com inurl:temp "index of /"
+site:example.com inurl:staging "index of /"
+site:example.com inurl:wp-admin filetype:php
+site:example.com inurl:wordpress filetype:php
+site:example.com inurl:phpmyadmin filetype:php
+site:example.com inurl:pma filetype:php
+site:example.com inurl:joomla filetype:php
+site:example.com inurl:drupal filetype:php
+site:example.com inurl:magento filetype:php
+site:example.com inurl:wp-admin ext:php
+site:example.com inurl:wordpress ext:php
+site:example.com inurl:phpmyadmin ext:php
+site:example.com inurl:pma ext:php
+site:example.com inurl:joomla ext:php
+site:example.com inurl:drupal ext:php
+site:example.com inurl:magento ext:php
+site:example.com inurl:wp-admin intext:"error"
+site:example.com inurl:wordpress intext:"error"
+site:example.com inurl:phpmyadmin intext:"error"
+site:example.com inurl:pma intext:"error"
+site:example.com inurl:joomla intext:"error"
+site:example.com inurl:drupal intext:"error"
+site:example.com inurl:magento intext:"error"
+site:example.com inurl:wp-admin intext:"password"
+site:example.com inurl:wordpress intext:"password"
+site:example.com inurl:phpmyadmin intext:"password"
+site:example.com inurl:pma intext:"password"
+site:example.com inurl:joomla intext:"password"
+site:example.com inurl:drupal intext:"password"
+site:example.com inurl:magento intext:"password"
+site:example.com inurl:wp-admin -inurl:login
+site:example.com inurl:wordpress -inurl:login
+site:example.com inurl:phpmyadmin -inurl:login
+site:example.com inurl:pma -inurl:login
+site:example.com inurl:joomla -inurl:login
+site:example.com inurl:drupal -inurl:login
+site:example.com inurl:magento -inurl:login
+site:example.com inurl:login filetype:php intext:"error"
+site:example.com inurl:admin filetype:php intext:"error"
+site:example.com inurl:dashboard filetype:php intext:"error"
+site:example.com inurl:panel filetype:php intext:"error"
+site:example.com inurl:config filetype:php intext:"error"
+site:example.com inurl:backup filetype:php intext:"error"
+site:example.com inurl:db filetype:php intext:"error"
+site:example.com inurl:test filetype:php intext:"error"
+site:example.com inurl:dev filetype:php intext:"error"
+site:example.com inurl:api filetype:php intext:"error"
+site:example.com inurl:auth filetype:php intext:"error"
+site:example.com inurl:user filetype:php intext:"error"
+site:example.com inurl:profile filetype:php intext:"error"
+site:example.com inurl:cpanel filetype:php intext:"error"
+site:example.com inurl:portal filetype:php intext:"error"
+site:example.com inurl:install filetype:php intext:"error"
+site:example.com inurl:temp filetype:php intext:"error"
+site:example.com inurl:staging filetype:php intext:"error"
+site:example.com inurl:login ext:php intext:"error"
+site:example.com inurl:admin ext:php intext:"error"
+site:example.com inurl:dashboard ext:php intext:"error"
+site:example.com inurl:panel ext:php intext:"error"
+site:example.com inurl:config ext:php intext:"error"
+site:example.com inurl:backup ext:php intext:"error"
+site:example.com inurl:db ext:php intext:"error"
+site:example.com inurl:test ext:php intext:"error"
+site:example.com inurl:dev ext:php intext:"error"
+site:example.com inurl:api ext:php intext:"error"
+site:example.com inurl:auth ext:php intext:"error"
+site:example.com inurl:user ext:php intext:"error"
+site:example.com inurl:profile ext:php intext:"error"
+site:example.com inurl:cpanel ext:php intext:"error"
+site:example.com inurl:portal ext:php intext:"error"
+site:example.com inurl:install ext:php intext:"error"
+site:example.com inurl:temp ext:php intext:"error"
+site:example.com inurl:staging ext:php intext:"error"
+site:example.com inurl:login filetype:php intext:"password"
+site:example.com inurl:admin filetype:php intext:"password"
+site:example.com inurl:dashboard filetype:php intext:"password"
+site:example.com inurl:panel filetype:php intext:"password"
+site:example.com inurl:config filetype:php intext:"password"
+site:example.com inurl:backup filetype:php intext:"password"
+site:example.com inurl:db filetype:php intext:"password"
+site:example.com inurl:test filetype:php intext:"password"
+site:example.com inurl:dev filetype:php intext:"password"
+site:example.com inurl:api filetype:php intext:"password"
+site:example.com inurl:auth filetype:php intext:"password"
+site:example.com inurl:user filetype:php intext:"password"
+site:example.com inurl:profile filetype:php intext:"password"
+site:example.com inurl:cpanel filetype:php intext:"password"
+site:example.com inurl:portal filetype:php intext:"password"
+site:example.com inurl:install filetype:php intext:"password"
+site:example.com inurl:temp filetype:php intext:"password"
+site:example.com inurl:staging filetype:php intext:"password"
+site:example.com inurl:login ext:php intext:"password"
+site:example.com inurl:admin ext:php intext:"password"
+site:example.com inurl:dashboard ext:php intext:"password"
+site:example.com inurl:panel ext:php intext:"password"
+site:example.com inurl:config ext:php intext:"password"
+site:example.com inurl:backup ext:php intext:"password"
+site:example.com inurl:db ext:php intext:"password"
+site:example.com inurl:test ext:php intext:"password"
+site:example.com inurl:dev ext:php intext:"password"
+site:example.com inurl:api ext:php intext:"password"
+site:example.com inurl:auth ext:php intext:"password"
+site:example.com inurl:user ext:php intext:"password"
+site:example.com inurl:profile ext:php intext:"password"
+site:example.com inurl:cpanel ext:php intext:"password"
+site:example.com inurl:portal ext:php intext:"password"
+site:example.com inurl:install ext:php intext:"password"
+site:example.com inurl:temp ext:php intext:"password"
+site:example.com inurl:staging ext:php intext:"password"
+site:example.com inurl:login -intext:"public" filetype:php
+site:example.com inurl:admin -intext:"public" filetype:php
+site:example.com inurl:dashboard -intext:"public" filetype:php
+site:example.com inurl:panel -intext:"public" filetype:php
+site:example.com inurl:config -intext:"public" filetype:php
+site:example.com inurl:backup -intext:"public" filetype:php
+site:example.com inurl:db -intext:"public" filetype:php
+site:example.com inurl:test -intext:"public" filetype:php
+site:example.com inurl:dev -intext:"public" filetype:php
+site:example.com inurl:api -intext:"public" filetype:php
+site:example.com inurl:auth -intext:"public" filetype:php
+site:example.com inurl:user -intext:"public" filetype:php
+site:example.com inurl:profile -intext:"public" filetype:php
+site:example.com inurl:cpanel -intext:"public" filetype:php
+site:example.com inurl:portal -intext:"public" filetype:php
+site:example.com inurl:install -intext:"public" filetype:php
+site:example.com inurl:temp -intext:"public" filetype:php
+site:example.com inurl:staging -intext:"public" filetype:php
+site:example.com inurl:login -intext:"public" ext:php
+site:example.com inurl:admin -intext:"public" ext:php
+site:example.com inurl:dashboard -intext:"public" ext:php
+site:example.com inurl:panel -intext:"public" ext:php
+site:example.com inurl:config -intext:"public" ext:php
+site:example.com inurl:backup -intext:"public" ext:php
+site:example.com inurl:db -intext:"public" ext:php
+site:example.com inurl:test -intext:"public" ext:php
+site:example.com inurl:dev -intext:"public" ext:php
+site:example.com inurl:api -intext:"public" ext:php
+site:example.com inurl:auth -intext:"public" ext:php
+site:example.com inurl:user -intext:"public" ext:php
+site:example.com inurl:profile -intext:"public" ext:php
+site:example.com inurl:cpanel -intext:"public" ext:php
+site:example.com inurl:portal -intext:"public" ext:php
+site:example.com inurl:install -intext:"public" ext:php
+site:example.com inurl:temp -intext:"public" ext:php
+site:example.com inurl:staging -intext:"public" ext:php
+site:example.com inurl:login "powered by" filetype:php
+site:example.com inurl:admin "powered by" filetype:php
+site:example.com inurl:dashboard "powered by" filetype:php
+site:example.com inurl:panel "powered by" filetype:php
+site:example.com inurl:config "powered by" filetype:php
+site:example.com inurl:backup "powered by" filetype:php
+site:example.com inurl:db "powered by" filetype:php
+site:example.com inurl:test "powered by" filetype:php
+site:example.com inurl:dev "powered by" filetype:php
+site:example.com inurl:api "powered by" filetype:php
+site:example.com inurl:auth "powered by" filetype:php
+site:example.com inurl:user "powered by" filetype:php
+site:example.com inurl:profile "powered by" filetype:php
+site:example.com inurl:cpanel "powered by" filetype:php
+site:example.com inurl:portal "powered by" filetype:php
+site:example.com inurl:install "powered by" filetype:php
+site:example.com inurl:temp "powered by" filetype:php
+site:example.com inurl:staging "powered by" filetype:php
+site:example.com inurl:login "powered by" ext:php
+site:example.com inurl:admin "powered by" ext:php
+site:example.com inurl:dashboard "powered by" ext:php
+site:example.com inurl:panel "powered by" ext:php
+site:example.com inurl:config "powered by" ext:php
+site:example.com inurl:backup "powered by" ext:php
+site:example.com inurl:db "powered by" ext:php
+site:example.com inurl:test "powered by" ext:php
+site:example.com inurl:dev "powered by" ext:php
+site:example.com inurl:api "powered by" ext:php
+site:example.com inurl:auth "powered by" ext:php
+site:example.com inurl:user "powered by" ext:php
+site:example.com inurl:profile "powered by" ext:php
+site:example.com inurl:cpanel "powered by" ext:php
+site:example.com inurl:portal "powered by" ext:php
+site:example.com inurl:install "powered by" ext:php
+site:example.com inurl:temp "powered by" ext:php
+site:example.com inurl:staging "powered by" ext:php
+site:example.com inurl:(login | admin) -intext:"public"
+site:example.com inurl:(dashboard | panel) -intext:"public"
+site:example.com inurl:(config | setup) -intext:"public"
+site:example.com inurl:(backup | db) -intext:"public"
+site:example.com inurl:(test | dev) -intext:"public"
+site:example.com inurl:(api | rest) -intext:"public"
+site:example.com inurl:(auth | user) -intext:"public"
+site:example.com inurl:(cpanel | portal) -intext:"public"
+site:example.com inurl:(install | temp) -intext:"public"
+site:example.com inurl:(staging | stage) -intext:"public"
+site:example.com inurl:(login | admin) "powered by"
+site:example.com inurl:(dashboard | panel) "powered by"
+site:example.com inurl:(config | setup) "powered by"
+site:example.com inurl:(backup | db) "powered by"
+site:example.com inurl:(test | dev) "powered by"
+site:example.com inurl:(api | rest) "powered by"
+site:example.com inurl:(auth | user) "powered by"
+site:example.com inurl:(cpanel | portal) "powered by"
+site:example.com inurl:(install | temp) "powered by"
+site:example.com inurl:(staging | stage) "powered by"
+site:example.com inurl:(login | admin) intext:"error"
+site:example.com inurl:(dashboard | panel) intext:"error"
+site:example.com inurl:(config | setup) intext:"error"
+site:example.com inurl:(backup | db) intext:"error"
+site:example.com inurl:(test | dev) intext:"error"
+site:example.com inurl:(api | rest) intext:"error"
+site:example.com inurl:(auth | user) intext:"error"
+site:example.com inurl:(cpanel | portal) intext:"error"
+site:example.com inurl:(install | temp) intext:"error"
+site:example.com inurl:(staging | stage) intext:"error"
+site:example.com inurl:(login | admin) intext:"password"
+site:example.com inurl:(dashboard | panel) intext:"password"
+site:example.com inurl:(config | setup) intext:"password"
+site:example.com inurl:(backup | db) intext:"password"
+site:example.com inurl:(test | dev) intext:"password"
+site:example.com inurl:(api | rest) intext:"password"
+site:example.com inurl:(auth | user) intext:"password"
+site:example.com inurl:(cpanel | portal) intext:"password"
+site:example.com inurl:(install | temp) intext:"password"
+site:example.com inurl:(staging | stage) intext:"password"
+site:example.com inurl:(login | admin) filetype:php intext:"error"
+site:example.com inurl:(dashboard | panel) filetype:php intext:"error"
+site:example.com inurl:(config | setup) filetype:php intext:"error"
+site:example.com inurl:(backup | db) filetype:php intext:"error"
+site:example.com inurl:(test | dev) filetype:php intext:"error"
+site:example.com inurl:(api | rest) filetype:php intext:"error"
+site:example.com inurl:(auth | user) filetype:php intext:"error"
+site:example.com inurl:(cpanel | portal) filetype:php intext:"error"
+site:example.com inurl:(install | temp) filetype:php intext:"error"
+site:example.com inurl:(staging | stage) filetype:php intext:"error"
+site:example.com inurl:(login | admin) ext:php intext:"error"
+site:example.com inurl:(dashboard | panel) ext:php intext:"error"
+site:example.com inurl:(config | setup) ext:php intext:"error"
+site:example.com inurl:(backup | db) ext:php intext:"error"
+site:example.com inurl:(test | dev) ext:php intext:"error"
+site:example.com inurl:(api | rest) ext:php intext:"error"
+site:example.com inurl:(auth | user) ext:php intext:"error"
+site:example.com inurl:(cpanel | portal) ext:php intext:"error"
+site:example.com inurl:(install | temp) ext:php intext:"error"
+site:example.com inurl:(staging | stage) ext:php intext:"error"
+site:example.com inurl:(login | admin) filetype:php intext:"password"
+site:example.com inurl:(dashboard | panel) filetype:php intext:"password"
+site:example.com inurl:(config | setup) filetype:php intext:"password"
+site:example.com inurl:(backup | db) filetype:php intext:"password"
+site:example.com inurl:(test | dev) filetype:php intext:"password"
+site:example.com inurl:(api | rest) filetype:php intext:"password"
+site:example.com inurl:(auth | user) filetype:php intext:"password"
+site:example.com inurl:(cpanel | portal) filetype:php intext:"password"
+site:example.com inurl:(install | temp) filetype:php intext:"password"
+site:example.com inurl:(staging | stage) filetype:php intext:"password"
+site:example.com inurl:(login | admin) ext:php intext:"password"
+site:example.com inurl:(dashboard | panel) ext:php intext:"password"
+site:example.com inurl:(config | setup) ext:php intext:"password"
+site:example.com inurl:(backup | db) ext:php intext:"password"
+site:example.com inurl:(test | dev) ext:php intext:"password"
+site:example.com inurl:(api | rest) ext:php intext:"password"
+site:example.com inurl:(auth | user) ext:php intext:"password"
+site:example.com inurl:(cpanel | portal) ext:php intext:"password"
+site:example.com inurl:(install | temp) ext:php intext:"password"
+site:example.com inurl:(staging | stage) ext:php intext:"password"

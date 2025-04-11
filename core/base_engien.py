@@ -1,21 +1,41 @@
 import requests
-from bs4 import BeautifulSoup
 import time
+import random
+import logging
+from fake_useragent import UserAgent
+from bs4 import BeautifulSoup
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 class BaseSearchEngine:
-    def __init__(self):
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-        }
+    def __init__(self,delay=2,*args,**kwargs):
+        self.user_agent = UserAgent()
+        self.delay = delay
 
     def search(self, query):
         raise NotImplementedError("Subclasses must implement the search method.")
 
-    def fetch_results(self, url):
-        try:
-            response = requests.get(url, headers=self.headers)
-            response.raise_for_status()
-            return response.text
-        except requests.RequestException as e:
-            print(f"Request failed: {e}")
-            return None
+    def fetch_results(self, url, retries=3):
+        """
+        Args:
+            url (str): 
+                URL to fetch results from.
+            retries (int): 
+                Number of retries if the request fails.
+        """
+        for attempt in range(1, retries + 1):
+            try:
+                headers = {"User-Agent": self.user_agent.random}
+                time.sleep(random.uniform(2, 5))
+
+                response = requests.get(url, headers=headers, timeout=10)
+                response.raise_for_status()
+
+                logging.info(f"[SUCCESS] Retrieved results from {url}")
+                return response.text
+
+            except requests.exceptions.RequestException as e:
+                logging.warning(f"[WARNING] Attempt {attempt} failed: {e}")
+                if attempt == retries:
+                    logging.error("[ERROR] Maximum retries reached, skipping request.")
+                    return None
