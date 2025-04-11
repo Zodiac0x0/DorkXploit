@@ -88,21 +88,18 @@ def save_results(target, dork, engine_name, results):
         Return:
             Saved file in result directory
     """
-    if not os.path.exists("results"):
-        os.makedirs("results")
     
     clean_dork = re.sub(r'[^\w-]', '_', dork)
 
-    filename = f"results/{engine_name}_{target}_{clean_dork}.txt"
     THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-    my_file = os.path.join(THIS_FOLDER, filename)
+    my_file = os.path.join(THIS_FOLDER, f"{engine_name}_{target}_{clean_dork}.txt")
 
     
     with open(my_file, 'w') as f:
         for result in results:
             f.write(str(result) + '\n')
     
-    logging.info(f"{Fore.GREEN}[SAVED] Results saved to {filename}{Style.RESET_ALL}")
+    logging.info(f"{Fore.GREEN}[SAVED] Results saved to {my_file}{Style.RESET_ALL}")
 
 def select_engine():
     engines = {
@@ -187,26 +184,22 @@ def threads():
         "Bing": BingDorker()
     }
     dorks = load_dorks(target=target)   
-    try:
-        dorks = load_dorks(target)
-        logging.debug("Loaded dorks: %s", dorks)
+    try:    
         with ThreadPoolExecutor(max_workers=thread or 10) as executor:
             lst = []
             for dork in dorks:
-                for engine_name,engine in engines.items():
+                for engine_name, engine in engines.items():
                     logging.info(f"{Fore.BLUE}[INFO] Running on {engine_name}{Style.RESET_ALL}")
                     future = executor.submit(engine.search, dork)
-                    lst.append((future,engine_name))
-                for res , engine_name in lst:
-                    result = future.result()
-                    if result:
-                        logging.info(f"{Fore.GREEN}Result founded for {target} using {engine_name}")
-                        save_results(target, dork, engine_name, result)
-                    else:
-                        logging.warning(f"{Fore.RED}No results for {target} using {engine_name}")
+                    lst.append((future, engine_name, dork))
+            for res, engine_name ,dork in lst:
+                result = res.result()  
+                if result:
+                    save_results(target, dork, engine_name, result) 
     except Exception as e:
         logging.error(f"{Fore.RED}Error: {e}{Style.RESET_ALL}")
         logging.critical(f'{Fore.RED}Critical error: The system cannot continue due to {e}')
+
 def main():
     args = argp()
     print(banner)
