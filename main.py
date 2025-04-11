@@ -1,42 +1,44 @@
 # main.py
 import os
 import argparse
-from core.DuckDuckDork import DuckDuckGoDorker
-from core.Google_Dork import GoogleDorker
-from core.Bing_Dork import BingDorker
-from core.Shodan_Scan import ShodanScanner
 from colorama import init, Fore, Style
 import logging
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor
-import socket
+
+from utils.color import Colors
+from core.DuckDuckDork import DuckDuckGoDorker
+from core.Google_Dork import GoogleDorker
+from core.Bing_Dork import BingDorker
+from core.Shodan_Scan import ShodanScanner
+
 
 
 logging.basicConfig(
     level=logging.INFO,)
 banner = f"""
-{Fore.CYAN}
+{Colors.CYAN}
+
         ██████╗  ██████╗ ██████╗ ██╗  ██╗██╗  ██╗██████╗ ██╗      ██████╗ ██╗████████╗
         ██╔══██╗██╔═══██╗██╔══██╗██║ ██╔╝╚██╗██╔╝██╔══██╗██║     ██╔═══██╗██║╚══██╔══╝
         ██║  ██║██║   ██║██████╔╝█████╔╝  ╚███╔╝ ██████╔╝██║     ██║   ██║██║   ██║   
         ██║  ██║██║   ██║██╔══██╗██╔═██╗  ██╔██╗ ██╔═══╝ ██║     ██║   ██║██║   ██║   
         ██████╔╝╚██████╔╝██║  ██║██║  ██╗██╔╝ ██╗██║     ███████╗╚██████╔╝██║   ██║   
         ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝ ╚═════╝ ╚═╝   ╚═╝  
-        {Style.RESET_ALL}
-        {Fore.MAGENTA}[!] Coded By: Omar Islam{Style.RESET_ALL}
+        {Colors.RESET}
+        {Colors.MAGENTA}[!] Coded By: Omar Islam{Colors.RESET}
         """
 init()
 
 def argp():
     parser = argparse.ArgumentParser(description="Dorking tool for reconnaissance it search on (Google, Bing, Duckduckgo)")
 
-    parser.add_argument("--url", help="Target domain (e.g., google.com)",dest='url',required=True,type=str)
+    parser.add_argument("--url", help="Target domain",dest='url',required=True,type=str)
     parser.add_argument("--save", help="Save the output in a file (default: result/result.txt)", 
                         default="result/result.txt", type=str,dest='search')
     parser.add_argument("--dorks",help="Path to the list of dorks file",required=True,type=str)
     parser.add_argument("--thread",help="Number of threads for the processing",dest='thread',default=10,type=int)
-    parser.add_argument("--use-shodan", action="store_true", help="Enable Shodan scanning if API key is provided.")
     parser.add_argument("--shodan-api", help="Shodan API key for scanning")
     parser.add_argument("--verbose",help="Enable verbose mode for more detailed output", action="store_true")
     parser.add_argument("--engine",help="Choose spacific engine to search with",choices=['Google','Bing',"DuckDuckgo"],dest='engine')
@@ -44,148 +46,116 @@ def argp():
 
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
-        logging.debug(f"{Fore.GREEN}Verbose mode enabled.{Style.RESET_ALL}")
-
-    if args.use_shodan and not args.shodan_api:
-        logging.error(f"{Fore.RED}Shodan scanning requires an API key. Use --shodan-api <API_KEY>.{Style.RESET_ALL}")
-        exit(1)
+        logging.debug(f"{Colors.GREEN}Verbose mode enabled.{Colors.RESET}")
+    if not args.dorks:
+        logging.error(f"{Colors.RED}[-] Please provide the dorks file path.{Colors.RESET}")
+        exit()
     return args
 
-def load_dorks(filename, target="example.com"):
+def load_dorks(dork_file,target):
     """
     Load dorks from a file and replace 'exmaple.com' to the target domain
         Args:
-            filename:
-                The path to the file containing the dorks.
             target:
                 The target domain to replace in the dorks.
         Return:
             A list of dorks with the target domain.
     """
     try:
-        with open(filename,'r') as f :
-            return [line.strip().replace('example.com',target) for line in f if line.strip()]
-    
+        with open(dork_file, 'r') as f:
+            return [line.strip().replace("example.com", target) for line in f if line.strip()]
     except FileNotFoundError:
-        logging.error(f"File {filename} not found")
-        return []
+        logging.error(f"{Colors.RED}File {dork_file} not found{Colors.RESET}")
     except Exception as e:
-        logging.error(f"Error loading dorks: {e}")
-        return []
+        logging.error(f"{Colors.RED}Error loading dorks: {e}{Colors.RESET}")
+    return []
 
-def save_results(target, dork, engine_name, results):
+
+def save_results(target, engine_name, results):
     """
     Save the results in a file
         Args:
             target: 
                 take the target domain from get_target_domain function
-            dork:
-                take the dork from load_dorks function
             engine_name:
                 take the engines from core file
             results:
                 take the results from core file
         Return:
-            Saved file in result directory
+            Saved file in the same directory
     """
-    
-    clean_dork = re.sub(r'[^\w-]', '_', dork)
-
-    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-    my_file = os.path.join(THIS_FOLDER, f"{engine_name}_{target}_{clean_dork}.txt")
-
-    
-    with open(my_file, 'w') as f:
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{engine_name}_{target}.txt")
+    with open(path, 'w') as f:
         for result in results:
             f.write(str(result) + '\n')
-    
-    logging.info(f"{Fore.GREEN}[SAVED] Results saved to {my_file}{Style.RESET_ALL}")
+    logging.info(f"{Colors.GREEN}[SAVED] Results saved to {path}{Colors.RESET}")
 
-def select_engine():
+def select_engine(args):
     engines = {
         "DuckDuckGo": DuckDuckGoDorker(),
         "Google": GoogleDorker(),
         "Bing": BingDorker()
     }
-    args = argp()
+
     target = args.url
-    sel_eng = args.engine
-    dorks = load_dorks(target=target)
+    dorks = load_dorks(args.dorks, target)
     if not dorks:
-        logging.error(f"{Fore.RED}[EXIT] No dorks to process. Exiting.{Style.RESET_ALL}")
-        return
-    
-    engine = engines.get(sel_eng) if sel_eng else None
-    try:
-        if sel_eng:
-            if sel_eng not in engines:
-                logging.error(f"{Fore.RED}[ERROR] Engine not found. Please select from the following engines:")
-                return
-        engine = engines[sel_eng]
-        try:
-            for dork in dorks:
-                results = engine.search(dork)
-                if results:
-                    logging.info(f"{Fore.BLUE}Saving...{Style.RESET_ALL}")
-                    save_results(target, dork, sel_eng, results)
-                    logging.info(f"{Fore.YELLOW}Saved")
-        except Exception as e:
-            logging.error(f"{Fore.RED}[EXIT] Error processing dork with {sel_eng}: {e}{Style.RESET_ALL}")
-            return
-    except Exception as e:
-        logging.error(f"{Fore.RED}[EXIT] Error processing dork with {sel_eng}: {e}{Style.RESET_ALL}")
+        logging.error(f"{Colors.RED}[EXIT] No dorks to process.{Colors.RESET}")
         return
 
-def shodan_api():
-    args = argp()
-    shodan_api = args.shodan_api
-    target = args.url
-
-    if shodan_api:
-        logging.info(f'{Fore.YELLOW}Scanning Shodan...!{Style.RESET_ALL}')
-        sh = ShodanScanner(api_key=shodan_api)
-        results = sh.scan(target)
-
-        if results:
-            logging.info(f"{Fore.GREEN}Found Some Results and Saving it...{Style.RESET_ALL}")
-            save_results(results, "Shodan", target, "Shodan API")
-        else:
-            logging.warning(f"{Fore.RED}No Shodan Results Found for {target}{Style.RESET_ALL}")
-    else:
-        logging.error(f"{Fore.RED}[ERROR] Shodan API key not provided. Exiting.{Style.RESET_ALL}")
-
-def run_each_eng():
-    args = argp()
-    target = args.url
-
-    engines = {
-        "DuckDuckGo": DuckDuckGoDorker(),
-        "Google": GoogleDorker(),
-        "Bing": BingDorker()
-}
-
-    dorks = load_dorks(target=target)
+    engine_name = args.engine
+    engine = engines.get(engine_name)
+    if not engine:
+        logging.error(f"{Colors.RED}[ERROR] Invalid engine selected.{Colors.RESET}")
+        return
 
     for dork in dorks:
-        logging.info(f"\n{Fore.MAGENTA}=== Processing dork: {dork} ==={Style.RESET_ALL}")
-        for engine_name, engine in engines.items():
-            logging.info(f"{Fore.BLUE}[INFO] Running on {engine_name}{Style.RESET_ALL}")
-            results = engine.search(dork)
-            if results:
-                save_results(target, dork, engine_name, results)
+        results = engine.search(dork)
+        if results:
+            logging.info(f"{Colors.BLUE}Saving...{Colors.RESET}")
+            save_results(target, dork, engine_name, results)
 
-def threads():
-    args = argp()
-    target = args.url
-    thread = args.threads
+def shodan_api(args):
+    if args.shodan_api:
+        logging.info(f"{Colors.YELLOW}Scanning Shodan...{Style.RESET_ALL}")
+        sh = ShodanScanner(api_key=args.shodan_api)
+        results = sh.scan(args.url)
+        if results:
+            logging.info(f"{Colors.GREEN}Results found. Saving...{Style.RESET_ALL}")
+            save_results(args.url, "Shodan", results)
+        else:
+            logging.warning(f"{Colors.RED}No Shodan Results Found for {args.url}{Style.RESET_ALL}")
+    else:
+        logging.error(f"{Colors.RED}[ERROR] Shodan API key not provided.{Style.RESET_ALL}")
+
+def run_each_eng(args):
     engines = {
         "DuckDuckGo": DuckDuckGoDorker(),
         "Google": GoogleDorker(),
         "Bing": BingDorker()
     }
-    dorks = load_dorks(target=target)   
+
+    dorks = load_dorks(args.dorks, args.url)
+    if not dorks:
+        return
+
+    for dork in dorks:
+        logging.info(f"\n{Colors.MAGENTA}=== Processing dork: {dork} ==={Style.RESET_ALL}")
+        for name, engine in engines.items():
+            results = engine.search(dork)
+            if results:
+                logging.info(f"{Colors.GREEN}Saving...{Colors.RESET}")
+                save_results(args.url, name, results)
+
+def threads():
+    engines = {
+        "DuckDuckGo": DuckDuckGoDorker(),
+        "Google": GoogleDorker(),
+        "Bing": BingDorker()
+    }
+    dorks = load_dorks(args.dorks,args.url)   
     try:    
-        with ThreadPoolExecutor(max_workers=thread or 10) as executor:
+        with ThreadPoolExecutor(max_workers=args.thread or 10) as executor:
             lst = []
             for dork in dorks:
                 for engine_name, engine in engines.items():
@@ -195,25 +165,23 @@ def threads():
             for res, engine_name ,dork in lst:
                 result = res.result()  
                 if result:
-                    save_results(target, dork, engine_name, result) 
+                    save_results(args.url, engine_name, result) 
     except Exception as e:
         logging.error(f"{Fore.RED}Error: {e}{Style.RESET_ALL}")
         logging.critical(f'{Fore.RED}Critical error: The system cannot continue due to {e}')
-
-def main():
-    args = argp()
+    
+if __name__ == "__main__":
     print(banner)
-    time.sleep(2)
-    if args.dorks:
-        load_dorks(filename=args.dorks,target=args.url)
-    elif args.dorks is None:
-        raise ValueError("You should add a Dorks File")
+    time.sleep(1)
+
+    args = argp()
+
+    if args.thread:
+        threads()
+
     if args.engine:
         select_engine(args)
     else:
         run_each_eng(args)
     if args.use_shodan:
         shodan_api(args)
-    
-if __name__ == "__main__":
-    main()
