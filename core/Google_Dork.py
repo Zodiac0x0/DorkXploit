@@ -1,38 +1,43 @@
-# core/Google_Dork.py
-import requests
 from bs4 import BeautifulSoup
 from core.base_engien import BaseSearchEngine
-from colorama import init, Fore, Style
+from utils.color import Colors
+import logging
 
-init()
+formatter = logging.Formatter(
+    f'{Colors.YELLOW}[%(levelname)s]{Colors.RESET} {Colors.CYAN}%(message)s{Colors.RESET}'
+)
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(formatter)
+
+logger = logging.getLogger("google")
+logger.setLevel(logging.INFO)
+logger.addHandler(console_handler)
 
 class GoogleDorker(BaseSearchEngine):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.base_url = "https://google.com/search?q="
+        self.base_url = "https://www.google.com/search?q="
 
     def search(self, dork):
         try:
             url = self.base_url + dork.replace(' ', '+')
-            print(f"{Fore.CYAN}[INFO] Searching Google with dork: {dork}{Style.RESET_ALL}")
-            print(f"{Fore.BLUE}[URL] Fetching: {url}{Style.RESET_ALL}")
-            
+            logger.info(f"[GOOGLE] Searching with dork: {dork}")
+            logger.debug(f"[GOOGLE] Fetching URL: {url}")
+
             html = self.fetch_results(url)
             if not html:
-                print(f"{Fore.RED}[-] Failed to fetch results{Style.RESET_ALL}")
+                logger.warning("[GOOGLE] Failed to fetch results")
                 return []
 
-            print(f"{Fore.GREEN}[+] Successfully fetched results{Style.RESET_ALL}")
             soup = BeautifulSoup(html, "html.parser")
             results = []
-            for link in soup.select("a[href^='http']"):  # Adjust selector as needed
+            for link in soup.select("a[href^='http']"):
                 href = link.get("href")
                 if href:
                     results.append(href)
-                    print(f"{Fore.GREEN}[FOUND] {href}{Style.RESET_ALL}")
-            
-            print(f"{Fore.YELLOW}[SUMMARY] Found {len(results)} results{Style.RESET_ALL}")
+                    logger.info(f"[GOOGLE] Found: {href}")
+            logger.info(f"[GOOGLE] Total results: {len(results)}")
             return results
         except Exception as e:
-            print(f"{Fore.RED}[ERROR] Unexpected error: {str(e)}{Style.RESET_ALL}")
+            logger.error(f"[GOOGLE] Error: {e}")
             return []
